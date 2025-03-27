@@ -1,5 +1,5 @@
 
-import { Camera, Search, Check, MapPin } from 'lucide-react';
+import { Camera, Search, Check, MapPin, Home } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
@@ -13,12 +13,16 @@ const NavBar = () => {
       transition={{ delay: 0.2 }}
       className="fixed bottom-4 left-0 right-0 flex justify-center z-50"
     >
-      <div className="bg-dark px-6 py-3 rounded-full flex items-center gap-10 shadow-lg">
+      <div className="bg-dark px-6 py-3 rounded-full flex items-center gap-8 shadow-lg">
+        <Link to="/">
+          <Home className="text-white w-7 h-7" />
+        </Link>
+        
         <Link to="/search">
           <Search className="text-white w-7 h-7" />
         </Link>
         
-        <Link to="/camera" className="relative -mt-10">
+        <Link to="/new-report" className="relative -mt-10">
           <motion.div
             whileTap={{ scale: 0.9 }}
             className="bg-action p-4 rounded-2xl shadow-lg"

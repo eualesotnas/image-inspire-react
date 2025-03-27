@@ -14,6 +14,7 @@ import ReportsPage from "./pages/ReportsPage";
 import CharacteristicsPage from "./pages/CharacteristicsPage";
 import { AnimatePresence } from 'framer-motion';
 import NotFound from "./pages/NotFound";
+import Index from "./pages/Index";
 
 const queryClient = new QueryClient();
 
@@ -26,7 +27,8 @@ const App = () => (
         <BrowserRouter>
           <AnimatePresence mode="wait">
             <Routes>
-              <Route path="/" element={<MapPage />} />
+              <Route path="/" element={<Index />} />
+              <Route path="/map" element={<MapPage />} />
               <Route path="/new-report" element={<NewReportPage />} />
               <Route path="/hero-data" element={<HeroDataPage />} />
               <Route path="/pet-details" element={<PetDetailsPage />} />

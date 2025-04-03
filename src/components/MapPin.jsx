@@ -2,22 +2,16 @@
 import { MapPin as MapPinIcon } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const MapPin = ({ active, onClick }) => {
+const MapPin = ({ active = false, onClick }) => {
   return (
-    <motion.div 
-      whileTap={{ scale: 0.95 }}
+    <motion.div
+      whileTap={{ scale: 0.9 }}
+      initial={{ scale: 0 }}
+      animate={{ scale: 1 }}
+      className={`rounded-full p-3 ${active ? 'bg-dark' : 'bg-action'} shadow-lg cursor-pointer z-10`}
       onClick={onClick}
-      className="cursor-pointer"
     >
-      <div className={`relative ${active ? 'scale-110' : ''}`}>
-        <MapPinIcon 
-          className={`w-8 h-8 ${active ? 'text-red-500' : 'text-slate-700'}`}
-          strokeWidth={active ? 2.5 : 2}
-        />
-        <div 
-          className={`absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 rounded-full ${active ? 'bg-red-500' : 'bg-slate-500'}`}
-        />
-      </div>
+      <MapPinIcon className="text-white" size={20} />
     </motion.div>
   );
 };

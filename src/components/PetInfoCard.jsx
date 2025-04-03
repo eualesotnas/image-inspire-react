@@ -3,25 +3,41 @@ import { motion } from 'framer-motion';
 
 const PetInfoCard = ({ pet, onClick }) => {
   return (
-    <motion.div
+    <motion.div 
+      className="bg-gray-100 rounded-xl p-4 mb-3 flex items-center gap-3"
       whileTap={{ scale: 0.98 }}
-      className="bg-white border border-gray-100 rounded-xl shadow-sm overflow-hidden mb-3 cursor-pointer"
       onClick={onClick}
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3 }}
     >
-      <div className="flex p-3 items-center">
-        <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+      <div className="flex-1">
+        <div className="text-gray-400 text-xs mb-1">Encontrado</div>
+        <div className="flex flex-wrap gap-4">
+          <div>
+            <div className="text-gray-400 text-xs">Raça</div>
+            <div className="text-dark font-medium">{pet.breed}</div>
+          </div>
+          <div>
+            <div className="text-gray-400 text-xs">Genero</div>
+            <div className="text-dark font-medium">{pet.gender}</div>
+          </div>
+        </div>
+        <div className="mt-1">
+          <div className="text-gray-400 text-xs">Localização</div>
+          <div className="text-dark text-sm">{pet.location}</div>
+        </div>
+      </div>
+      
+      {pet.image && (
+        <div className="w-16 h-16 rounded-lg overflow-hidden">
           <img 
             src={pet.image} 
-            alt={pet.breed} 
+            alt="Pet" 
             className="w-full h-full object-cover"
           />
         </div>
-        
-        <div className="ml-4">
-          <div className="text-lg font-semibold">{pet.breed}</div>
-          <div className="text-sm text-gray-500">{pet.location}</div>
-        </div>
-      </div>
+      )}
     </motion.div>
   );
 };

@@ -1,17 +1,17 @@
 
-import { useState, useEffect } from 'react';
-import NavBar from '../components/NavBar';
-import MapPin from '../components/MapPin';
-import { usePetContext } from '../context/PetContext';
+import { useState } from 'react';
+import NavBar from '../components/NavBar.jsx';
+import MapPin from '../components/MapPin.jsx';
+import { usePetContext } from '../context/PetContext.jsx';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const MapPage = () => {
   const { foundPets, setSelectedPet } = usePetContext();
   const navigate = useNavigate();
-  const [activePinIndex, setActivePinIndex] = useState<number | null>(null);
+  const [activePinIndex, setActivePinIndex] = useState(null);
   
-  const handlePinClick = (index: number) => {
+  const handlePinClick = (index) => {
     setActivePinIndex(index);
     setSelectedPet(foundPets[index]);
     navigate('/pet-details');

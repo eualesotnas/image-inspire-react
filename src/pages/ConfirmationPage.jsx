@@ -1,7 +1,7 @@
 
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { usePetContext } from '../context/PetContext';
+import { usePetContext } from '../context/PetContext.jsx';
 import { Check } from 'lucide-react';
 
 const ConfirmationPage = () => {

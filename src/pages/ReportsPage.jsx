@@ -1,15 +1,15 @@
 
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { usePetContext } from '../context/PetContext';
-import PetInfoCard from '../components/PetInfoCard';
-import NavBar from '../components/NavBar';
+import { usePetContext } from '../context/PetContext.jsx';
+import PetInfoCard from '../components/PetInfoCard.jsx';
+import NavBar from '../components/NavBar.jsx';
 
 const ReportsPage = () => {
   const navigate = useNavigate();
   const { foundPets, setSelectedPet } = usePetContext();
   
-  const handlePetClick = (index: number) => {
+  const handlePetClick = (index) => {
     setSelectedPet(foundPets[index]);
     navigate('/pet-details');
   };

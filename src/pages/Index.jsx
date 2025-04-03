@@ -1,7 +1,7 @@
 
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import NavBar from '../components/NavBar';
+import NavBar from '../components/NavBar.jsx';
 
 const Index = () => {
   const navigate = useNavigate();

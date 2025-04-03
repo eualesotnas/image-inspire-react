@@ -2,19 +2,19 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import SelectionChip from '../components/SelectionChip';
+import SelectionChip from '../components/SelectionChip.jsx';
 
 const CharacteristicsPage = () => {
   const navigate = useNavigate();
-  const [breedSelection, setBreedSelection] = useState<string[]>([]);
-  const [genderSelection, setGenderSelection] = useState<string | null>(null);
-  const [colorSelection, setColorSelection] = useState<string[]>([]);
+  const [breedSelection, setBreedSelection] = useState([]);
+  const [genderSelection, setGenderSelection] = useState(null);
+  const [colorSelection, setColorSelection] = useState([]);
   
   const breeds = ["Bulldog", "Beagle", "Golden", "Chiuaua", "Pastor Alemão", "Rotweiller"];
   const genders = ["Macho", "Femea"];
   const colors = ["Digging", "Pintado", "Marrom", "Vira-lata"];
   
-  const toggleBreed = (breed: string) => {
+  const toggleBreed = (breed) => {
     if (breedSelection.includes(breed)) {
       setBreedSelection(breedSelection.filter(b => b !== breed));
     } else {
@@ -22,11 +22,11 @@ const CharacteristicsPage = () => {
     }
   };
   
-  const toggleGender = (gender: string) => {
+  const toggleGender = (gender) => {
     setGenderSelection(genderSelection === gender ? null : gender);
   };
   
-  const toggleColor = (color: string) => {
+  const toggleColor = (color) => {
     if (colorSelection.includes(color)) {
       setColorSelection(colorSelection.filter(c => c !== color));
     } else {

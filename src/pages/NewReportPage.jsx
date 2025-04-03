@@ -2,13 +2,13 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { usePetContext, PetInfo } from '../context/PetContext';
-import LocationField from '../components/LocationField';
+import { usePetContext } from '../context/PetContext.jsx';
+import LocationField from '../components/LocationField.jsx';
 
 const NewReportPage = () => {
   const navigate = useNavigate();
   const { addPet } = usePetContext();
-  const [formData, setFormData] = useState<Partial<PetInfo>>({
+  const [formData, setFormData] = useState({
     species: 'Cachorro',
     breed: 'Labrador',
     gender: 'Masculino',
@@ -16,7 +16,7 @@ const NewReportPage = () => {
   });
   
   const handleSubmit = () => {
-    const newPet: PetInfo = {
+    const newPet = {
       id: Date.now().toString(),
       species: formData.species || 'Cachorro',
       breed: formData.breed || 'Labrador',

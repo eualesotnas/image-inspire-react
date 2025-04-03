@@ -1,10 +1,9 @@
 
 import { Camera, Search, Check, MapPin, Home } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const NavBar = () => {
-  const location = useLocation();
   
   return (
     <motion.div 

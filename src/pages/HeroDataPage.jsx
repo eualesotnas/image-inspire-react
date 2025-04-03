@@ -1,8 +1,8 @@
 
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { usePetContext } from '../context/PetContext';
-import LocationField from '../components/LocationField';
+import { usePetContext } from '../context/PetContext.jsx';
+import LocationField from '../components/LocationField.jsx';
 
 const HeroDataPage = () => {
   const navigate = useNavigate();

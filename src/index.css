@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,7 +5,7 @@
 :root {
   --color-background: #ffffff;
   --color-dark: #172434;
-  --color-action: #007AFF;
+  --color-action: #F97316;
 }
 
 body {
